@@ -1,7 +1,7 @@
 import React from 'react';
 
 function EventCard({ event }) {
-  if (!event) return null; // Add a guard to prevent empty prop errors
+  if (!event) return null; 
 
   return (
     <div className="bg-white p-4 rounded-md shadow-md">
