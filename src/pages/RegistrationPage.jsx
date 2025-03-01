@@ -1,19 +1,18 @@
-// src/pages/RegistrationPage.jsx
+
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // For navigation in React Router v7
+import { useNavigate } from 'react-router-dom';  
 
 function RegistrationPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const navigate = useNavigate();  // Hook to navigate after successful registration
+  const navigate = useNavigate();  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = { name, email };
-    // Assuming registration success
     localStorage.setItem('user', JSON.stringify(userData));
-    navigate('/dashboard');  // Navigate to user dashboard after registration
+    navigate('/dashboard'); 
   };
 
   return (
