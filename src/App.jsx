@@ -1,10 +1,7 @@
-// src/App.jsx
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import useAuth from './hooks/useAuth';
-// Pages
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import EventListingsPage from './pages/EventListingPage';
 import NotFoundPage from './pages/NotFoundPage';
