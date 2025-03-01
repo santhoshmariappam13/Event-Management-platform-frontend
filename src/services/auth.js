@@ -1,6 +1,4 @@
-const API_URL = 'http://localhost:3000/api'; // Change to match your backend URL
-
-// Register a new user
+const API_URL = 'http://localhost:3000/api'; 
 export const register = async (userData) => {
   try {
     const response = await fetch(`${API_URL}/auth/register`, {
@@ -13,10 +11,10 @@ export const register = async (userData) => {
     if (!response.ok) {
       throw new Error('Error registering user');
     }
-    return response.json(); // Return user data after registration (could include JWT token or user object)
+    return response.json(); 
   } catch (error) {
     console.error('Error registering user:', error);
-    throw error; // Rethrow error for higher-level handling
+    throw error; 
   }
 };
 
@@ -33,10 +31,10 @@ export const login = async (credentials) => {
     if (!response.ok) {
       throw new Error('Error logging in user');
     }
-    return response.json(); // Return user data after successful login (usually includes JWT token)
+    return response.json(); 
   } catch (error) {
     console.error('Error logging in user:', error);
-    throw error; // Rethrow error for higher-level handling
+    throw error; 
   }
 };
 
