@@ -1,14 +1,11 @@
-// src/pages/UserDashboardPage.jsx
-
 import React, { useContext } from 'react';
 import UserDashboard from '../components/UserDashboard';
 import { AuthContext } from '../context/AuthContext';
 
 function UserDashboardPage() {
-  const { user } = useContext(AuthContext);  // Fetch user from context
-
+  const { user } = useContext(AuthContext);  
   if (!user) {
-    return <p>Loading...</p>;  // Handle if user is not yet loaded
+    return <p>Loading...</p>; 
   }
 
   return (
