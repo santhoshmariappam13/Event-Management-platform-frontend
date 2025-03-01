@@ -1,14 +1,11 @@
-// src/context/AuthContext.jsx
-
 import React, { createContext, useState, useEffect } from 'react';
-import { login, logout as logoutService } from '../services/auth'; // Import login and logout from auth.js
-
+import { login, logout as logoutService } from '../services/auth'; 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  // Load user from localStorage if available
+ 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
     if (storedUser) {
@@ -16,12 +13,11 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // Login function
   const loginUser = async (userData) => {
     try {
-      const user = await login(userData);  // Call the login function from auth.js
-      localStorage.setItem('user', JSON.stringify(user)); // Store user in localStorage
-      setUser(user);  // Update context state
+      const user = await login(userData);  
+      localStorage.setItem('user', JSON.stringify(user)); 
+      setUser(user);  
     } catch (error) {
       console.error('Login failed:', error);
     }
@@ -29,8 +25,8 @@ export const AuthProvider = ({ children }) => {
 
   // Logout function
   const logoutUser = () => {
-    logoutService();  // Call the logout function from auth.js
-    setUser(null);     // Reset user state
+    logoutService();  
+    setUser(null);     
   };
 
   return (
