@@ -40,6 +40,5 @@ export const login = async (credentials) => {
 
 // Log out a user
 export const logout = () => {
-  // Optionally remove any authentication tokens from storage if necessary (e.g., localStorage)
   localStorage.removeItem('user');
 };
