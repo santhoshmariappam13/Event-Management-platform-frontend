@@ -1,9 +1,8 @@
 import React  from 'react';
-// Import useAuth as default import
-import useAuth from '../hooks/useAuth';  // No curly braces since it's a default export
+import useAuth from '../hooks/useAuth';  
 
 function Login() {
-  const { login } = useAuth();  // Use the useAuth hook
+  const { login } = useAuth(); 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,7 +10,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const userData = await login({ email, password });  // Pass credentials to login
+      const userData = await login({ email, password });  
       console.log('User logged in:', userData);
     } catch (error) {
       console.error('Login failed:', error);
